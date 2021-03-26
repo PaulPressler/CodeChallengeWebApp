@@ -8,19 +8,23 @@ export const ValidateFields = (ages, currency, startDate, endDate) => {
     }
     // Check ages array for ages out of range
     else if(agesArray.filter(value => (value < 18 || value > 70)).length > 0) {
-        alert('Please enter ages between 18 and 70.')
+        alert('Please only enter ages between 18 and 70.')
     }
     // Check that currency has a length of 3
     else if(currency.length !== 3) {
-        alert('Please enter a 3 character currency code.')
+        alert('Please enter a 3 character currency code in ISO 4217 format.')
+    }
+    // Check that currency is alpha
+    else if(!new RegExp(/^[a-z]+$/i).test(currency)) {
+        alert('Currency must only contain alpha characters, A-Z.')
     }
     // Check start date is valid
     else if (!startDate) {
-        alert('Please enter a valid future start date.')
+        alert('Please enter a valid start date.')
     }
     // Check end date is valid
     else if (!endDate) {
-        alert('Please enter a valid future end date.')
+        alert('Please enter a valid end date.')
     }
     // fields are valid. send request
     else {
