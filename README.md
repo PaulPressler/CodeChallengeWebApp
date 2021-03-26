@@ -1,4 +1,4 @@
-# Running the code challendge web app
+# Running the code challenge web app
 
 ### Requirements
 You’ll need to have Node >= 10.16 and npm >= 5.6 on your machine.
