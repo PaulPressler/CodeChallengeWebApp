@@ -65,7 +65,7 @@ const App = () => {
   }
 
   return <div>
-    <Header/>
+    <Header authenticating={JWT === ""}/>
     <Form>
       <Ages value={ages} onChange={setAges}/>
       <Currency value={currency} onChange={val=>{val.length <= 3 && setCurrency(val.toUpperCase())}}/>
